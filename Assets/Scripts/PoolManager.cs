@@ -48,10 +48,11 @@ public class PoolManager : MonoBehaviour
 
         foreach (Pool pool in _pools)
         {
-            _poolsDictionary.Add(pool.parentName, pool);
+           _poolsDictionary.Add(pool.parentName, pool);
         }
     }
-    /*
+
+/*
     public GameObject GetPooledObject(int selectedPool, Vector3 position, Quaternion rotation)
     {
         for (int i = 0; i < _pools[selectedPool].poolSize; i++)
@@ -70,8 +71,10 @@ public class PoolManager : MonoBehaviour
         Debug.Log("No hya objetos disponibles");
         return null;
     }
-    */
+*/
 
+//----------------------Dictionary--------------------------
+    
     public GameObject GetPooledObject(string poolName, Vector3 position, Quaternion rotation)
     {
         for (int i = 0; i < _poolsDictionary[poolName].poolSize; i++)

@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     private Rigidbody _rb;
 
-    private float _shootForce = 10f;
+    private float _shootForce = 50f;
 
     void Awake()
     {
