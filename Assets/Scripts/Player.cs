@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        _shootAction = InputSystem.actions["Attack"];
+        _shootAction = InputSystem.actions["LShoot"];
     }
 
     void Start()

@@ -21,4 +21,9 @@ public class Bullet : MonoBehaviour
     {
         gameObject.SetActive(false);  
     }
+
+    void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
+    }
 }

@@ -10,8 +10,7 @@ public class StarSparrowController : MonoBehaviour
     private InputAction _moveAction;
     private Vector2 _moveInput;
 
-    private InputAction _Lshoot;
-    private InputAction _Rshoot;
+    private InputAction _Lshoot, _Rshoot;
 
     //Parameters
     private float _speed = 40f;
@@ -20,6 +19,9 @@ public class StarSparrowController : MonoBehaviour
     [SerializeField] private Transform _LBulletTransform;
     [SerializeField] private Transform _RBulletTransform;
     [SerializeField] private GameObject _bulletPrefab;
+
+    private Vector3 maxPosition = new Vector3(20, 45, 0);
+    private Vector3 minPosition = new Vector3(-20, -40, 0);
 
 
     void Awake()
@@ -41,12 +43,20 @@ public class StarSparrowController : MonoBehaviour
 
         if(_Lshoot.WasPressedThisFrame())
         {
-            LShoot();
+            Shoot(_LBulletTransform);
         }
         if(_Rshoot.WasPressedThisFrame())
         {
-            RShoot();
+            Shoot(_RBulletTransform);
         }
+    }
+
+    void FixedUpdate()
+    {
+        float clampX = Mathf.Clamp(transform.position.x, minPosition.x, maxPosition.x);
+        float clampY = Mathf.Clamp(transform.position.y, minPosition.y, maxPosition.y);
+
+        transform.position = new Vector3(clampX, clampY, 0);
     }
 
     void Movement()
@@ -54,6 +64,7 @@ public class StarSparrowController : MonoBehaviour
         _rb.linearVelocity = _moveInput * _speed;
     }
 
+    /*
     void LShoot()
     {
         GameObject bullet = PoolManager.Instance.GetPooledObject("Bullets", _LBulletTransform.position, _LBulletTransform.rotation);
@@ -63,6 +74,13 @@ public class StarSparrowController : MonoBehaviour
     void RShoot()
     {
         GameObject bullet = PoolManager.Instance.GetPooledObject("Bullets", _RBulletTransform.position, _RBulletTransform.rotation);
+        bullet.SetActive(true);
+    } 
+    */
+
+    void Shoot(Transform canon)
+    {
+        GameObject bullet = PoolManager.Instance.GetPooledObject("Bullets", canon.position, canon.rotation);
         bullet.SetActive(true);
     }
 }
