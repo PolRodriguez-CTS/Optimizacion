@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     private Rigidbody _rb;
 
@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        if(other.tag == "Enemy")
+        if(other.tag == "Player")
         {
             other.GetComponent<Enemy>().Death();
         }

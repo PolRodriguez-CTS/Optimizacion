@@ -28,8 +28,6 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
-        //Instantiate(_bulletPrefab, _bulletTransform.position, _bulletTransform.rotation);
-
         GameObject bullet = PoolManager.Instance.GetPooledObject("Bullets", _bulletTransform.position, _bulletTransform.rotation);
         bullet.SetActive(true);
     }

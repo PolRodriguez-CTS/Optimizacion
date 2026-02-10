@@ -37,7 +37,6 @@ public class StarSparrowController : MonoBehaviour
     void Update()
     {
         _moveInput = _moveAction.ReadValue<Vector2>();
-        //Vector3 movement = new Vector3(_moveInput.x, 0, _moveInput.y); 
         
         Movement();
 
@@ -64,19 +63,10 @@ public class StarSparrowController : MonoBehaviour
         _rb.linearVelocity = _moveInput * _speed;
     }
 
-    /*
-    void LShoot()
+    void Tilt()
     {
-        GameObject bullet = PoolManager.Instance.GetPooledObject("Bullets", _LBulletTransform.position, _LBulletTransform.rotation);
-        bullet.SetActive(true);
+        
     }
-
-    void RShoot()
-    {
-        GameObject bullet = PoolManager.Instance.GetPooledObject("Bullets", _RBulletTransform.position, _RBulletTransform.rotation);
-        bullet.SetActive(true);
-    } 
-    */
 
     void Shoot(Transform canon)
     {
