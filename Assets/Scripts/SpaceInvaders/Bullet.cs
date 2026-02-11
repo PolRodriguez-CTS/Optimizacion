@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     private Rigidbody _rb;
 
@@ -18,10 +18,9 @@ public class EnemyBullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
-
-        if(other.tag == "Player")
+        if(other.tag == "Enemy")
         {
+            gameObject.SetActive(false);
             other.GetComponent<Enemy>().Death();
         }
     }

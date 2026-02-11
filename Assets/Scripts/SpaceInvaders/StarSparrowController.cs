@@ -63,11 +63,6 @@ public class StarSparrowController : MonoBehaviour
         _rb.linearVelocity = _moveInput * _speed;
     }
 
-    void Tilt()
-    {
-        
-    }
-
     void Shoot(Transform canon)
     {
         GameObject bullet = PoolManager.Instance.GetPooledObject("Bullets", canon.position, canon.rotation);
