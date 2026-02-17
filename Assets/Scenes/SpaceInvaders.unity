@@ -647,7 +647,7 @@ MonoBehaviour:
     pooledObjects: []
   - parentName: Enemies
     prefab: {fileID: 3584528034085719235, guid: b236cdc7b3560bf46a1266b63ac0825f, type: 3}
-    poolSize: 5
+    poolSize: 10
     pooledObjects: []
   - parentName: EnemyBullets
     prefab: {fileID: 1506136611635767518, guid: f1a75ce2481c2d74db8001d852fc4017, type: 3}

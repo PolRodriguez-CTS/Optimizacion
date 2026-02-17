@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class StarSparrowController : MonoBehaviour
+public class ShipController : MonoBehaviour
 {
     //Components
     private Rigidbody _rb;

@@ -90,7 +90,7 @@ public class PoolManager : MonoBehaviour
             }
         }
 
-        Debug.Log("No hya objetos disponibles");
+        Debug.Log("No hay objetos disponibles");
         return null;
     }
 }
